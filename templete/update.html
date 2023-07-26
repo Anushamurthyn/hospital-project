@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<link rel="stylesheet" type="text/css" href="../css/dashboard.css">
+	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<script type="text/javascript" src="../js/connection.js"></script>
+
+</head>
+<body>
+	<div id="model_con_proc">
+		<div id="model_content_proc">
+				<img src="../media/processing.gif">
+		</div>
+
+		</div>
+	<div id="model_con">
+		<div id="model_content">
+			<p id="expierd_p">your session has expiered, nedd to login back</p>
+			<button onclick="loginback()">login again</button>
+		</div>
+
+	</div>
+	<div id="header_con2">
+		<p id="dashboard">Hospital Panel</p>
+		<input type="hidden" id="hidden_user" >
+	</div>
+	<div id="updatedetails_con">
+		<h1>Update Details</h1>
+		<input type="text" id="hospital_name" placeholder="Hospital Name" class="h_name" >
+		<br>
+		<input type="text" id="hospital_registration_number"  placeholder="Hospital Registration Number" class="h_regno" >
+		<br>
+		<input type="text" id="director_pan" placeholder="Director Pan Number" class="h_dirpan" >
+		<br>
+		<input type="text" id="director_name" placeholder="Director Name" class="dirname">
+		<br>
+		<input type="text" id="hospital_address" placeholder="Hospital Address" class="hadd" >
+		<br>
+		<button  onclick="update()" id="n_update">Update</button>
+	</div>
+	<div id="footer_con_dash">
+		<p id="footercontent">Copyright@2023</p>
+	</div>
+
+</body>
+</script>
+<!--Connect to default server-->
+	 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+	
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+
+	<script type="text/javascript" src="../js/update.js"></script>
+	<script type="text/javascript" src="../js/updatedetails.js"></script>
+	
+	
+	
+
+<script type="text/javascript">
+	//this script is responsible for checking that user is active or not
+	authentication.onAuthStateChanged(function (user) {
+		if(user)
+		{
+			var a_user=user.email;
+			//check that user as verified his email or not
+			var status=user.emailVerified;
+			if (status==true){
+			
+				document.getElementById('hidden_user').value=a_user;
+
+		
+			}else{
+
+			} 
+		}else{
+			document.getElementById('model_con').style.display="block";
+
+		}
+		
+		
+	});
+</script>
+</html>

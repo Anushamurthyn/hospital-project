@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<link rel="stylesheet" type="text/css" href="css//index.css">
+	<link rel="stylesheet" type="text/css" href="css//dashboard.css">
+	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<script type="text/javascript" src="js/connection.js"></script>
+</head>
+<body onload="refresh();">
+	<div id="model_con_proc">
+		<div id="model_content_proc">
+				<img src="media/processing.gif">
+		</div>
+
+		</div>
+	<div id="header_con">
+		
+		<p id="centralized_hospital">centralized hospital</p>
+		
+	</div>
+
+	<div id="body_con">
+		<div id="login_con">
+			<img id="logo" src="media/logo_login.png">
+			<br>
+			<input id="l_userid" type="text" placeholder="enter your emailid">
+			<br>
+			<input  id="l_password" type="password" placeholder="enter your password">
+			<br>
+			<div>
+			<p id="captcha">1234</p>
+			
+			<button id="refresh_btn" onclick="refresh()"><img id="ref_captcha" src="media/refresh_captcha.png"></button>
+			</div>
+			<input id="hidden_captcha" type="hidden">
+			<br>
+			<input id="n_captcha" type="text" placeholder="Enter captcha">
+			<br>
+			<button id="login_btn" onclick="login()">Login</button>
+			<button id="new_btn" onclick="newuser()">New User</button>
+
+
+			
+		</div>
+
+		<div id="signup_con">
+			<div id="right_con">
+				<img src="media/signup_logo2.jpg" id="s_icon"  >				
+			</div>
+
+			<div id="left_con">
+					
+				<input id="s_userid" type="text" placeholder="enter your emailid">
+				<br>
+				<input  id="s_password" type="password" placeholder="enter your password">
+				<br>
+				<button id="signup_btn" onclick="createacc()">submit</button>	
+			</div>
+		</div>
+
+		<div id="verification_con">
+			<img  id="email" src="media/email.gif">
+			<br>
+			<button id="verify_btn" onclick="sendemail()"> click to verify yourself</button>
+			
+		</div>
+
+	</div>
+
+	<div id="footer_con">
+		<p id="footercontent">copyright@2023</p>
+	</div>
+	
+
+</body>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+	//this script is responsible for checking that user is active or not
+	authentication.onAuthStateChanged(function (user) {
+		if(user)
+		{
+			var a_user=user.email;
+			//check that user as verified his email or not
+			var status=user.emailVerified;
+			if (status==true){
+		
+			//display dashboard
+			document.getElementById("signup_con").style.display="none";
+			document.getElementById("login_con").style.display="none";
+			//redirect
+			window.location.href="templete/dashbord.html";
+
+		} else{
+			document.getElementById("signup_con").style.display="none";
+			document.getElementById("login_con").style.display="none";
+			document.getElementById("verification_con").style.display="block";
+
+
+
+		}
+		
+		}
+		
+	});
+
+</script>
+<script type="text/javascript">
+	document.getElementById('hidden_captcha').innerHTML=n_captcha;
+</script>
+
+</html>

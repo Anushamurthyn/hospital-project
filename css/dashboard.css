@@ -1,0 +1,424 @@
+#header_con2,#admin_header_con
+{
+	font-size: 20px;
+	text-align: center;
+	background-color: #52665f;
+	height: 60px;
+	
+
+}
+#dashboard,#admin_cont
+{
+	margin-top: 5px;
+	padding-top: 20px;
+	font-weight: bold;
+	font-family: monospace;
+	color: white;
+	font-size: 25px;
+}
+#navigation_con
+{
+	font-size: 20px;
+	background-color: #52665f;
+	height: 60px;
+	
+}
+#mydetails_con button
+{
+	height: 30px;
+	width: 100px;
+	margin-bottom: 150px;
+	margin: 10px;
+}
+#active_user
+{
+	color: white;
+	float: left;
+	margin-right: 20px;
+	
+
+
+}
+
+#user{
+	float: right;
+}
+
+#buttons{
+	float: right
+}
+#footer_con
+{
+	font-size: 20px;
+	text-align: center;
+	background-color: #52665f;
+	height: 40px;
+	margin-top: 500px;
+
+}
+#footer_con_dash
+{
+	font-size: 20px;
+	text-align: center;
+	background-color: #52665f;
+	height: 40px;
+	margin-top: 650px;
+}
+#footer_con_admin
+{
+	font-size: 20px;
+	text-align: center;
+	background-color: #52665f;
+	height: 40px;
+	margin-top: 600px;
+}
+
+
+#footercontent
+{
+	margin-top: 2px;
+	padding-top: 5px;
+	font-weight: bold;
+	font-family: monospace;
+	color: white;
+	font-size: 15px;
+}
+#model_con
+{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	overflow: auto;
+	display: none;
+
+}
+#model_content
+{
+	height: 300px;
+	width: 80%;
+	background-color: white;
+	margin-top: 15%;
+	margin-left: 10%;
+	text-align: center;
+
+}
+#expierd_p,#message_p
+{
+	font-size: 50px;
+	font-weight: bold;
+	padding-top: 5%;
+}
+#model_content button
+{
+	height: 40px;
+	width: 400px;
+	margin-top: 10px;
+	background-color: #52665f;
+	color: white;
+}
+#model_con_pd
+{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	overflow: auto;
+	
+
+}
+#model_content_pd
+{
+	height: 300px;
+	width: 80%;
+	background-color: white;
+	margin-top: 15%;
+	margin-left: 10%;
+	text-align: center;
+
+}
+
+#health_con
+{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.6);
+	position: fixed;
+	overflow: auto;
+	display: none;
+}
+
+#health_content
+{
+	height: 250px;
+	width: 35%;
+	background-color: white;
+	margin-top: 8%;
+	margin-left: 30%;
+	text-align: center;
+}
+
+#health_content_2
+{
+	margin-left: 590px;
+	margin-top: 10px;
+}
+
+#h_submit:hover
+{
+	background-color: #888c89;
+	cursor: pointer;
+
+}
+
+#f_btn,#p_btn,#app_btn
+{
+
+	font-size: 15px;
+	height: 40px;
+	width: 100%;
+	
+}
+#app_btn,#f_btn,#p_btn
+{
+	margin-top: 5px;
+	
+}
+#f_btn:hover
+{
+	background-color: inherit;
+	cursor:pointer;
+	color: #52665f
+}
+#p_btn:hover
+{
+	cursor:pointer;
+	background-color: inherit;
+	color: #52665f
+}
+#app_btn:hover
+{
+	cursor:pointer;
+	background-color: inherit;
+	
+	color: #52665f
+}
+#logout_btn
+{
+	float: right;
+}
+
+
+
+
+#logout_btn:hover
+{
+	background-color: red;
+	cursor: pointer;
+	color: white;
+}
+#refresh_btn:hover
+{
+	
+	cursor:pointer;
+}
+#pd_con
+{
+	border: 3px solid black;
+	width: 450px;
+	text-align: center;
+	margin-left: 500px;
+	margin-top: 70px;
+	height: 370px;
+}
+
+
+#p_nickname,#parent_name,#parent_contact
+{
+	width: 280px;
+	height: 40px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+}
+
+#mydetails_con_dash
+{
+	
+	border:  3px solid black;
+	float: left;
+	height: 580px;
+	width: 530px;
+	margin-top: 10px;
+	margin-left: 10px;
+	text-align: center;
+
+
+}
+
+#app_con
+{
+	float: right;
+	text-align: center;
+	border: 3px solid black;
+	width: 1100px;
+	height: 577px;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+#app_table
+{
+	
+	width: 100%;
+	
+	
+	
+}
+
+#u_p_logo
+{
+	height: 200px;
+	width: 200px;
+}
+#admin_table
+{
+	border:  3px solid black;
+	float: left;
+	height: 550px;
+	width: 1225px;
+	margin-top: 10px;
+}
+#change_status
+{
+	float: right;
+	text-align: center;
+	border: 3px solid black;
+	width: 250px;
+	height: 500px;
+	padding-top: 50px;
+	margin-top: 10px;
+}
+#p_con
+{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	overflow: auto;
+	display: none;
+	
+
+}
+#p_content
+{
+	height: 550px;
+	width: 80%;
+	background-color: white;
+	margin-top: 5%;
+	margin-left: 10%;
+	text-align: center;
+
+}
+#p_l
+{
+	border:  3px solid black;
+	float: left;
+	height: 520px;
+	width: 900px;
+	margin-top: 10px;
+	margin-left: 10px;
+
+
+}
+#p_r
+{
+	float: right;
+	text-align: center;
+	border: 3px solid black;
+	width: 250px;
+	height: 470px;
+	padding-top: 50px;
+	margin-top: 10px;
+	margin-right: 10px;
+
+
+}
+#pres_con
+{
+	
+	text-align: center;
+	border: 3px solid black;
+	width: 225px;
+	height: 230px;
+	margin-top: 10px;
+	margin-left: 2px;
+	display: none;
+
+}
+#ref_captcha
+{	
+	height: 20px;
+	width: 30px;
+}
+#s_icon
+{
+	height: 300px;
+	width: 300px;
+	margin-top: 100px;
+	float: right;
+	margin-top: 50px;
+}
+#model_con_nav
+{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	overflow: auto;
+	display: none;
+	
+
+}
+#model_content_nav
+{
+	height: 100%;
+	width: 20%;
+	background-color: white;
+	text-align: center;
+
+}
+#menu_icon
+{
+	float: left;
+}
+#menu_logo
+{
+	height: 50px;
+	width: 50px;
+}
+#close_btn
+{
+	border: none;
+	background-color: inherit;
+}
+#close_btn:hover
+{
+	cursor: pointer;
+}
+#hospital_logo
+{
+	padding-left: 50px;
+	
+
+}
+#x_btn
+{
+	font-size: 20px;
+	border: none;
+	background-color: inherit;
+}
+#x_btn:hover
+{
+	cursor: pointer;
+	background-color: red;
+}

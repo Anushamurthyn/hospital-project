@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<link rel="stylesheet" type="text/css" href="../css/dashboard.css">
+	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<script type="text/javascript" src="../js/connection.js"></script>
+
+</head>
+<body>
+	<div id="model_con_nav">
+		<div id="model_content_nav">
+		
+		<div>
+			<div style="display: inline-block; float: left;">
+				<img src="../media/hospital_logo.jpg" id="hospital_logo"> 
+
+			</div>
+			<div style="display: inline-block; float: right;">
+				<button id="x_btn" onclick="x_btn()">X</button>
+			</div>
+		</div>
+		
+		<button id="app_btn" onclick="app()">Appointment</button>
+		<button id="f_btn"  onclick="fetch_opd()">Fetch Patient Opd</button><br>
+		<button id="p_btn" onclick="new_opd()">New Patient opd</button>	
+		</div>
+
+	</div>
+	<div id="model_con">
+		<div id="model_content">
+			<p id="expierd_p">your session has expired, need to login back</p>
+			<button onclick="loginback()">login again</button>
+		</div>
+
+	</div>
+
+	<div id="p_con">
+
+		<div id="p_content">
+			
+				<div id="p_l">
+					<p>Medical History</p>
+					 <table id="med_table" border="4"></table>
+					
+				</div>
+				<div id="p_r">
+					<p>Enter Health ID</p>
+					<input type="text"  id="int_id" >
+					<br>
+					<button onclick="fetch()" id="fsearch_btn">Search</button>
+					<br>
+					<button onclick="insert_prescription()" id="insert_btn">Insert New Prescription</button>
+
+					<div id="pres_con">
+						<input type="" placeholder="Illness" id="i_id">
+						<br>
+						<input type="" placeholder="Medicine" id="m_id">
+						<br>
+						<input type="" placeholder="Duration" id="d_id">
+						<br>
+						<button onclick="pres_submit()">Submit</button>
+					</div>
+					
+				</div>
+
+		</div>
+
+	</div>
+
+	<div id="model_con_pd">
+		<div id="model_content_pd">
+			<p id="message_p">Complete Your Details </p>
+			<button onclick="submit()" id="details_submit_btn">Submit</button>
+		</div>
+
+	</div>
+		
+	
+	<div id="header_con2">
+		<p id="dashboard">Hospital Panel</p>
+	</div>
+	<div id="navigation_con">
+		<div id="menu_icon">
+			<button id="close_btn" onclick="openmenubar()"><img src="../media/menu_icon.png" id="menu_logo"></button>
+		</div>
+
+
+		<div id="user">
+			<p id="active_user">user name-unkown</p>
+			<input type="hidden" id="hidden_user" >
+		
+		<button onclick="logout()" id="logout_btn">Logout</button>
+		</div>
+		
+		
+	</div>
+
+
+	
+
+
+	<div id="body_con_dash" style="display: inline-block;">
+
+
+		<div id="mydetails_con_dash" style="display: inline-block; float: left;">
+		<h1>My Details</h1>
+		<img id="u_p_logo" src="../media/u_p_logo.jpg" >
+		<p id="hospital_name">Hospital Name:</p>
+		<p id="hospital_registration_number">Hospital Registration Number:</p>
+		<p id="director_pan">Director Pan Number:</p>
+		<p id="director_name">Director Name:</p>
+		<p id="hospital_address">Hospital Address:</p>
+		<button id="openupdate_btn" onclick="openupdate()">Update</button>
+		</div>
+
+
+		<div id="app_con" style="display: inline-block; float: right;">
+			<table id="app_table" border="3">
+				
+			</table>
+		</div>
+		
+		
+
+
+	</div>
+
+	<div id="footer_con_dash">
+		<p id="footercontent">Copyright@2023</p>
+	</div>
+	
+
+</body>
+<script type="text/javascript">
+	function fetch_opd()
+	{
+		document.getElementById('p_con').style.display="block";
+	}
+	function insert_prescription()
+	{
+		document.getElementById('pres_con').style.display="block";
+	}
+	function openmenubar()
+	{
+	   document.getElementById('model_con_nav').style.display="block";
+
+	}
+	function x_btn()
+	{
+		document.getElementById('model_con_nav').style.display="none";
+	}
+</script>
+<!--Connect to default server-->
+	 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+	
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/fetchdetails.js"></script>
+<script type="text/javascript" src="../js/insertprescription.js"></script>
+<script type="text/javascript" src="../js/fetchmedicalhistory.js"></script>
+<script type="text/javascript" src="../js/appointment.js"></script>
+<script type="text/javascript">
+	//this script is responsible for checking that user is active or not
+	authentication.onAuthStateChanged(function (user) {
+		if(user)
+		{
+			var a_user=user.email;
+			//check that user as verified his email or not
+			var status=user.emailVerified;
+			if (status==true){
+				document.getElementById('active_user').innerHTML="Welcome, " + a_user;
+				document.getElementById('hidden_user').value=a_user;
+
+		
+			} else{
+
+			
+			
+
+
+			}
+		
+		}
+		else{
+			//display the model container
+			document.getElementById('model_con').style.display="block";
+		}
+		
+	});
+</script>
+</html>

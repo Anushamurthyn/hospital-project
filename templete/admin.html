@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/dashboard.css">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+
+	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<script type="text/javascript" src="../js/connection.js"></script>
+</head>
+<body>
+	<div id="admin_header_con">
+		<p id="admin_cont">Admin Panel</p>
+	</div>
+	<div id="admin_table_con">
+
+
+		<div id="admin_table">
+
+			<table id="hos_table" border="4">
+				
+			</table>
+			
+		</div>
+		<div id="change_status">
+			<input id="h_reg_no" type="text"  placeholder="Hospital Registration Number">
+			<br>
+			<button id="active_btn" onclick="activate()">Activate</button>
+			<br>
+			<button id="dactive_btn" onclick="deactivate()">Deactivate</button>
+		</div>
+	</div>
+	<div id="footer_con_admin">
+		<p id="footercontent">Copyright@2023</p>
+	</div>
+</body>
+<!--Connect to default server-->
+	 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+	
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+	<script type="text/javascript" src="../js/fetchhospitaldetails.js"></script>
+	<script type="text/javascript" src="../js/activate.js"></script>
+</html>

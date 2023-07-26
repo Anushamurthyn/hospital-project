@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/dashboard.css">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<script type="text/javascript" src="../js/connection.js"></script>
+</head>
+<body>
+	<div id="model_con_proc">
+		<div id="model_content_proc">
+				<img src="../media/processing.gif">
+		</div>
+
+		</div>
+	<div id="model_con">
+		<div id="model_content">
+			<p id="expierd_p">your session has expiered, nedd to login back</p>
+			<button onclick="loginback()">login again</button>
+		</div>
+
+	</div>
+	<div id="health_con">
+               
+                <div id="health_content">
+                        <h1>Health id</h1>
+                        <p id="n_name">name:</p>
+                        <p id="n_dob">dob:</p>
+                        <p id="n_dob_place">dob place:</p>
+                        <p id="n_health_id">health id:</p>
+                </div>
+ 
+                <div id="health_content_2">
+                        <button onclick="printout()">confirm and printout</button>
+                </div>
+ 
+        </div>
+
+	
+		
+		
+	
+	<div id="header_con2">
+		<p id="dashboard">New Patient Registration</p>
+	</div>
+	<div id="navigation_con">
+		<button onclick="logout()" id="logout_btn">logout</button>
+		<p id="active_user">User Name-Unkown</p>
+		<input type="hidden" id="hidden_user" >
+	</div>
+	
+	
+	
+
+	<div id="body_con_pp">
+		<form id="new_data">
+			<input type="text" id="p_nickname" placeholder="Patient Name" required >
+			<br>
+			<input type="text" id="parent_name" placeholder="Parent Name" required>
+			<br>
+			<input type="text" id="parent_contact" placeholder="Parent Contact">
+			<br>
+			<input type="submit" id="pd_s_btn">
+
+		</form>
+			
+	</div>
+
+
+	<div id="footer_con">
+		<p id="footercontent">Copyright@2023</p>
+	</div>
+	
+
+</body>
+<!--Connect to default server-->
+	 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+	
+	<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/newpatientdetails.js"></script>
+<script type="text/javascript">
+	//this script is responsible for checking that user is active or not
+	authentication.onAuthStateChanged(function (user) {
+		if(user)
+		{
+			var a_user=user.email;
+			//check that user as verified his email or not
+			var status=user.emailVerified;
+			if (status==true){
+				document.getElementById('active_user').innerHTML="welcome, "+ a_user;
+				document.getElementById('hidden_user').value=a_user;
+
+		
+			} else{
+
+			
+			
+
+
+			}
+		
+		}
+		else{
+			//display the model container
+			document.getElementById('model_con').style.display="block";
+		}
+		
+	});
+</script>
+</html>
